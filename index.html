@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задание 1</title>
+  </head>
+  <body>
+    
+    <ul id="link">
+      <!--1-->
+      <li>
+        <a href="http://www.kubsu.ru/ru" target="_blank"
+          >абсолютную гиперссылку на главную страницу сайта kubsu.ru;</a
+        >
+      </li>
+      <!--2-->
+      <li>
+        <a href="https://www.kubsu.ru/ru/" target="_blank"
+          >абсолютную на главную сайта kubsu.ru в протоколе https</a
+        >
+      </li>
+      <!--3-->
+      <li id="top">
+        Ссылка-изображение
+        <hr width="300" align="left"/>
+        <a href="https://example.com"
+          ><img src="image.jpg" alt="image" width="300" height="300"
+        /></a>
+      </li>
+      <!--4-->
+      <li>
+        <a href="./deep.html">сокращенную ссылку на внутреннюю страницу</a>
+      </li>
+      <!--5?-->
+      <li>
+        <a href="/">сокращенную ссылку на главную страницу</a>
+      </li>
+      <!--6-->
+      <li>
+        <a href="#top"
+          >ссылку на фрагмент текущей страницы;</a
+        >
+      </li>
+      <!--7-->
+      <li>
+        <a
+          href="https://youtube.com/@PewDiePie?si=1QrmdjnKs1ntXQQc?parameter1=p1&parameter2=p2&parameter3=p3/" target="_blank"
+          >ссылку с тремя параметрами в URL</a
+        >
+      </li>
+      <!--8-->
+      <li>
+        <a href="./about/page.html?id=123">ссылку с параметром id в URL</a>
+      </li>
+      <!--9-->
+      </li>
+      <li><a href="/deep.html">относительную на страницу в текущем каталоге</a>
+      </li>
+      <!--10-->
+      <li>
+        <a href="/about/page.html">относительную на страницу в каталоге about</a>
+      </li>
+      <!--11-->
+      <li>
+        <a href="../index.html">относительную на страницу в каталоге уровнем выше текущего</a>
+      </li>
+      <!--12-->
+      <li>
+        <a href="../../index.html">относительную на страницу в каталоге двумя уровнями выше</a>
+      </li>
+      <!--13-->
+      <li>
+        <p>
+          контекстную
+        <a href="https://example.com"><i>ссылку</i></a>
+        в тексте абзаца
+      </p>
+      </li>
+      <!--14-->
+      <li>
+        <a href="https://www.youtube.com#masthead-container" target="_blank">ссылку на фрагмент страницы стороннего сайта</a>
+      </li>
+      <!--15-->
+      <li>
+        Ссылки из прямоугольных и круглых областей картинки
+        <br>
+        <img src="https://w.forfun.com/fetch/70/7047b702475924ba8f8044b5b5ca56ba.jpeg" width="190" height="190" alt="Картинище" usemap="#mymap" >
+        <map name="mymap">
+            <area shape="rect" coords="40,25,90,150" href="https://cdn.dribbble.com/users/1903950/screenshots/5416286/comp_8_still_2x.gif?compress=1&resize=400x300" alt="Прямоугольная область">
+            <area shape="circle" coords="100,10,25" href="https://cdn.dribbble.com/users/2459019/screenshots/17246156/media/422b9bbd5457efc518d8087112817a84.jpg?compress=1&resize=400x300" alt="Круглая область">
+        </map>
+      </li>
+      <!--16-->
+      <li>
+        <a href>Ссылка с пустым href</a>
+      </li>
+      <!--17-->
+      <li>
+        <a>Ссылка без href</a>
+      </li>
+      <!--18-->
+      <li>
+        <a href="https://example.com" rel="notfollow">Ссылка, по которой запрещен переход поисковикам</a>
+      </li>
+      <!--19-->
+      <li>
+        <a href="https://example.com">
+            <noindex>
+            Запрещенная для индексации поисковиками
+            </noindex>
+        </a>
+    </li>
+      <!--20-->
+      
+      <ol>
+        нумерованный список ссылок с подписями title
+        <li>
+        <a href="#link" title="Гиперссылки">Гиперссылки</a> 
+        </li>
+        <li>
+        <a href="#form" title="Форма">Форма</a> 
+        </li>
+        
+      </ol>
+      <!--21-->
+      <li>
+        <a href="ftp://user:2511@example.com/files.file.html">ссылку на файл на сервере FTP c авторизацией</a>
+        </li> 
+      <h2>Форма</h2>
+      <form action="https://www.example.com" method="POST"  id="form">
+        <label>
+          ФИО:<br>
+          <input name="field-name-1" placeholder="Ивонов Иван Иванович" type="name">
+        </label><br>
+        <label>
+          Телефон:<br>
+            <input name="field-number" placeholder="+7 (999)-435-90-44" type="number">
+        </label><br>
+        <label>
+          e-mail:<br>
+          <input name="field-email" placeholder="opachki@gmail.com" type="email">
+       </label><br>
+       <label>
+        Дата рождения:<br>
+        <input name="field-date" value="2002-11-11" type="date">
+       </label><br>
+       Пол:<br>
+       <label>
+           <input type="radio" name="radio-group-2" value="М">
+           М
+       </label>
+       <label>
+           <input type="radio" name="radio-group-2" value="Ж">
+           Ж
+       </label>
+      </label><br>
+      <label>
+        Любимый язык программирования:
+        <br/>
+        <select name="field-name[]" multiple="multiple" size="5">
+          <option value="Значение 1">Pascal</option>
+          <option value="Значение 2">C</option>
+          <option value="Значение 3">C++</option>
+          <option value="Значение 4">JavaScript</option>
+          <option value="Значение 5">PHP</option>
+          <option value="Значение 6">Python</option>
+          <option value="Значение 7">Java</option>
+          <option value="Значение 8">Haskel</option>
+          <option value="Значение 9">Clojure</option>
+          <option value="Значение 10">Prolog</option>
+          <option value="Значение 11">Scala</option>
+        </select>
+      </label><br>
+      <label>
+        Биография:<br>
+        <textarea > </textarea>
+      </label><br>
+      С контрактом ознакомлен(а):<br>
+               <label>
+                   <input type="checkbox" checked="checked" name="check-1">
+               </label><br>
+               <button name="button-1" type="button">
+                Сохранить
+              </button>
+      </form>
+
+  </body>
+</html>
