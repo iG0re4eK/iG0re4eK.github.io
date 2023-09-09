@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="background.css">
+    
     <title>Задание 1</title>
   </head>
   <body>
-    
-    <ul id="link">
+    <div class="colored-background" >
+    <ul id="link" class="center-both">
       <!--1-->
       <li>
         <a href="http://www.kubsu.ru/ru" target="_blank"
@@ -30,7 +32,7 @@
       </li>
       <!--4-->
       <li>
-        <a href="./deep.html">сокращенную ссылку на внутреннюю страницу</a>
+        <a href="/deep.html">сокращенную ссылку на внутреннюю страницу</a>
       </li>
       <!--5?-->
       <li>
@@ -55,11 +57,11 @@
       </li>
       <!--9-->
       </li>
-      <li><a href="/deep.html">относительную на страницу в текущем каталоге</a>
+      <li><a href="./deep.html">относительную на страницу в текущем каталоге</a>
       </li>
       <!--10-->
       <li>
-        <a href="/about/page.html">относительную на страницу в каталоге about</a>
+        <a href="./about/page.html">относительную на страницу в каталоге about</a>
       </li>
       <!--11-->
       <li>
@@ -127,6 +129,7 @@
       <li>
         <a href="ftp://user:2511@example.com/files.file.html">ссылку на файл на сервере FTP c авторизацией</a>
         </li> 
+      </div>
       <h2>Форма</h2>
       <form action="https://www.example.com" method="POST"  id="form">
         <label>
