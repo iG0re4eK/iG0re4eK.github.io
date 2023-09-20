@@ -16,6 +16,7 @@ header {
 .header-links-nav {
   max-width: 960px;
   float: right;
+  margin: auto;
   font-size: x-large;
 }
 .name-site {
