@@ -10,6 +10,14 @@ body {
 header {
   background-color: cornflowerblue;
 }
+.header-content {
+  padding: 1%;
+}
+.header-links-nav {
+  max-width: 960px;
+  float: right;
+  font-size: x-large;
+}
 .name-site {
   display: inline;
   font-size: xxx-large;
@@ -20,19 +28,9 @@ header {
   overflow: hidden;
 }
 
-.header-content {
-  margin: auto;
-  padding: 1%;
-  max-width: 960px;
-}
-.header-links-nav {
-  display: inline;
-  float: right;
-  font-size: x-large;
-}
-
 .content {
-  margin: 3% 10% 3% 10%;
+  margin: auto;
+  max-width: 960px;
 }
 
 .links-content {
@@ -43,7 +41,7 @@ header {
 }
 
 .inside-content {
-  margin: 1% 0 0 0;
+  margin-bottom: 3%;
   padding: 1%;
   background-color: cornflowerblue;
 }
