@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  color: #0b0c10;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+header {
+  background-color: cornflowerblue;
+}
+.header-content {
+  padding: 1%;
+}
+.header-links-nav {
+  max-width: 960px;
+  float: right;
+  margin: auto;
+  font-size: x-large;
+}
+.name-site {
+  display: inline;
+  font-size: xxx-large;
+}
+.logo {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.content {
+  margin: auto;
+  max-width: 960px;
+}
+
+.links-content {
+  margin-bottom: 4%;
+  margin-top: 7%;
+  padding: 1%;
+  background-color: cornflowerblue;
+}
+
+.inside-content {
+  margin-bottom: 3%;
+  padding: 1%;
+  background-color: cornflowerblue;
+}
+
+.row-neChet {
+  background-color: #7751a7;
+}
+.row-Chet {
+  background-color: #9e2057;
+}
+caption {
+  background-color: #da5757;
+}
+.footer {
+  padding: 10px;
+  background-color: cornflowerblue;
+}
