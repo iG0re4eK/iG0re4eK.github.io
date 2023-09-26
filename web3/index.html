@@ -7,23 +7,27 @@
     <title>Задание 2</title>
   </head>
   <body>
-    <header>
-      <div class="header-content">
-        <img src="image2.png" alt="logo" class="logo">
-        <div class="name-site">название сайта</div>
-        <div class="header-links-nav">
-          <nav>
-            <a href="#link">ссылки</a>
-            <a href="#table">таблица</a>
-            <a href="#form">форма</a>
-            <a href="#footer">footer</a>
+    
+      <header class="header-content">
+        <div class="logo-nameSite">
+          <img src="image2.png" alt="logo" class="logo">
+          <div class="name-site">название сайта</div>
+        </div>
+        <div class="menu-links-nav">
+          <nav >
+            <ul class="links-content">
+              <a href="#link">ссылки</a>
+              <a href="#table">таблица</a>
+              <a href="#form">форма</a>
+              <a href="#footer">footer</a>
+            </ul>
           </nav>
         </div>
-      </div>
-      
-    </header>
-  <div class="content">
-    <div class="links-content" id="link">
+        
+      </header>
+
+  <div class="flex-box">
+    <div class="links content-block flex-item-1" id="link">
       <ul  class="center-both">
         <li>
     <a href="http://www.kubsu.ru/ru" target="_blank"
@@ -137,7 +141,7 @@
     <a href="ftp://user:1234@tavalik.ru/Temp/file.txt">ссылку на файл на сервере FTP c авторизацией</a>
     </li> 
     </div>
-    <div class="inside-content" id="table">
+    <div class="content-block flex-item-2" id="table">
         <table>
           <caption>Таблица</caption>
           <tbody>
@@ -183,7 +187,7 @@
           </tbody>
         </table>
     </div>
-    <div class="inside-content" id="form">
+    <div class="content-block flex-item-3" id="form">
       <h2>Форма</h2>
           <form action="https://www.example.com" method="POST"  >
             <label>
@@ -241,9 +245,11 @@
           </form>
     </div>
   </div>
-  <footer class="footer" id="footer">
-    <p>Всем советую быть мизантропом. Хотя, если бы все были мезантропами, то кто бы мне донатил RoflanZadymolsa?</p>
-    <p>(с) Виталий Цаль</p>
-  </footer>
+  
+    </div>
+    <footer class="footer" id="footer">
+      <p>Всем советую быть мизантропом. Хотя, если бы все были мезантропами, то кто бы мне донатил RoflanZadymolsa?</p>
+      <p>(с) Виталий Цаль</p>
+    </footer>
   </body>
 </html>
