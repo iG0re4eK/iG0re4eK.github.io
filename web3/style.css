@@ -10,7 +10,7 @@ body {
 /*______________________________________________________*/
 .header-content {
   background-color: cornflowerblue;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -31,7 +31,7 @@ body {
   max-width: 960px;
 }
 .logo-nameSite {
-  width: 70vw;
+  width: 70%;
   height: auto;
   display: flex;
   margin-bottom: 1vh;
@@ -52,8 +52,8 @@ body {
 }
 .content-block {
   background-color: cornflowerblue;
-
-  width: 70vw;
+  padding: 2%;
+  width: 70%;
 }
 
 .flex-item-1 {
@@ -78,7 +78,7 @@ caption {
 /*______________________________________________________*/
 .footer {
   padding: 2vw;
-  width: 100vw;
+  width: 100%;
   background-color: cornflowerblue;
 }
 
@@ -87,7 +87,7 @@ caption {
     background-color: initial;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
   }
   .name-site {
     font-size: x-large;
@@ -96,7 +96,7 @@ caption {
   }
   .logo-nameSite {
     background-color: cornflowerblue;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 2vh;
@@ -105,14 +105,12 @@ caption {
     background-color: cornflowerblue;
     padding-top: 2vh;
     padding-bottom: 2vh;
-    width: 100vw;
+    width: 100%;
   }
   .links-content {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
-    background-color: #7751a7;
   }
   /*______________________________________________________*/
   .flex-item-2 {
@@ -130,7 +128,7 @@ caption {
     padding-bottom: 2vh;
     padding-left: 5vw;
     align-content: center;
-    width: 100vw;
+    width: 100%;
   }
   .links {
     padding-left: initial;
