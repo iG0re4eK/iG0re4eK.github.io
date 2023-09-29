@@ -2,22 +2,11 @@
   margin: 0;
   color: #0b0c10;
 }
-/*______________________________________________________*/
-body {
-  background-color: aliceblue;
-  overflow-x: hidden;
-}
-/*______________________________________________________*/
 .header-content {
-  background-color: cornflowerblue;
-  width: 100%;
+  background-color: initial;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.name-site {
-  font-size: x-large;
-  align-self: flex-end;
+  flex-direction: column;
+  width: 100%;
 }
 .logo {
   display: inline-block;
@@ -25,23 +14,29 @@ body {
   overflow: hidden;
   padding: 2%;
 }
-.menu-links {
-  margin: auto;
-  font-size: medium;
-  max-width: 960px;
+.name-site {
+  font-size: x-large;
+  align-self: center;
+  background-color: cornflowerblue;
 }
 .logo-nameSite {
-  width: 70%;
-  height: auto;
+  background-color: cornflowerblue;
+  width: 100%;
   display: flex;
-  margin-bottom: 1vh;
+  justify-content: space-evenly;
+  margin-bottom: 2vh;
 }
 .menu-links-nav {
-  padding-right: 3vw;
-  padding-top: 1vh;
+  background-color: cornflowerblue;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  width: 100%;
 }
-
-/*______________________________________________________*/
+.links-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 .flex-box {
   display: flex;
   flex-direction: column;
@@ -50,22 +45,18 @@ body {
   gap: 2vh;
   align-items: center;
 }
-.content-block {
-  background-color: cornflowerblue;
-  padding: 2%;
-  width: 70%;
-}
 
 .flex-item-1 {
-  order: 1;
-}
-.flex-item-2 {
   order: 2;
 }
+.flex-item-2 {
+  order: 1;
+}
+
 .flex-item-3 {
   order: 3;
 }
-/*______________________________________________________*/
+
 .row-neChet {
   background-color: #7751a7;
 }
@@ -75,62 +66,65 @@ body {
 caption {
   background-color: #da5757;
 }
-/*______________________________________________________*/
-.footer {
-  padding: 2vw;
-  width: 100%;
+.content-block {
   background-color: cornflowerblue;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+
+  align-content: center;
+  width: 100%;
 }
 
-@media screen and (max-width: 640px) {
+.footer {
+  width: 100%;
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 640px) {
   .header-content {
-    background-color: initial;
-    display: flex;
-    flex-direction: column;
+    background-color: cornflowerblue;
     width: 100%;
+    flex-direction: row;
   }
   .name-site {
+    background-color: #7751a7;
     font-size: x-large;
-    align-self: center;
-    background-color: cornflowerblue;
+    align-self: flex-end;
   }
   .logo-nameSite {
-    background-color: cornflowerblue;
-    width: 100%;
+    width: 70%;
+
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 2vh;
+    justify-content: flex-start;
+    margin-bottom: 1vh;
   }
+
   .menu-links-nav {
-    background-color: cornflowerblue;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    width: 100%;
+    background-color: #9e2057;
   }
   .links-content {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+    padding-right: 2vw;
   }
+
   /*______________________________________________________*/
-  .flex-item-2 {
-    order: 1;
+
+  .content-block {
+    background-color: cornflowerblue;
+    padding: 2%;
+    width: 70%;
   }
   .flex-item-1 {
+    order: 1;
+  }
+  .flex-item-2 {
     order: 2;
   }
   .flex-item-3 {
     order: 3;
   }
-  .content-block {
-    background-color: cornflowerblue;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    padding-left: 5vw;
-    align-content: center;
-    width: 100%;
-  }
-  .links {
-    padding-left: initial;
-  }
+  /*______________________________________________________*/
 }
