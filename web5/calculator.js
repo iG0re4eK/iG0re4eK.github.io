@@ -1,5 +1,5 @@
 function calculatePrice() {
-  let selectedProduct = document.getElementById("choice").value;
+  let selectedProduct = document.getElementById("selection").value;
   let amount = document.getElementById("amount").value;
   let isNumber = /^[0-9]*(\.[0-9]+)?$/.test(amount);
   let price = getProductPrice(selectedProduct);
