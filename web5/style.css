@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+}
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.price-content {
+  background-color: beige;
+}
+.product-text {
+  background-color: aquamarine;
+}
+.price-text {
+  background-color: chocolate;
+}
+.flex-box-content {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+.pay-product {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+.price-table {
+  background-color: rgb(210, 140, 195);
+}

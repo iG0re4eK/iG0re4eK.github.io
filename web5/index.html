@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Калькулятор</title>
+  </head>
+  <body>
+    <div class="flex-box">
+      <div class="price-content">
+        <h2 align="center">Мясной отдел</h5>
+        <div class="flex-box-content price-table">
+            <table >
+                <tbody>
+                <tr>
+                    <td class="product-text" align="center">Товар</td>
+                    <td class="price-text" align="center">Цена</td>
+                </tr>
+                <tr>
+                    <td>
+                    Колбаса вареная Вязанка филейская Стародвор колбасы п/а, 450 г
+                    </td>
+                    <td>159.00 руб</td>
+                </tr>
+                <tr>
+                    <td>Сосиски Мираторг венские Мираторг в/у, 350 г</td>
+                    <td>149.00 руб</td>
+                </tr>
+                <tr>
+                    <td>
+                    Колбаса вареная в синюге Мираторг докторская Мираторг , 450 г
+                    </td>
+                    <td>239.00 руб</td>
+                </tr>
+                <tr>
+                    <td>
+                    Ветчина вареная Знаменский по швейцарскому рецепту Знаменский
+                    ООО в/у, 300 г
+                    </td>
+                    <td>249.00 руб</td>
+                </tr>
+                <tr>
+                    <td>
+                    Сосиски вареные Дымов докторские Дымовское КП защ атм, 464 г
+                    </td>
+                    <td>159.00 руб</td>
+                </tr>
+                <tr>
+                    <td>
+                        Колбаса вареная Черкизово классическая ООО Пит-Продукт нарезка м/у, 200 г
+                    </td>
+                    <td>145.00 руб</td>
+                </tr>
+                <tr>
+                    <td>Сосиски н/о Дымов баварские Дымовское КП в/у, 460 г</td>
+                    <td>315.00 руб</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pay-product flex-box-content">
+            <label>Выберите товар:</label>
+            <select id="choice" name="choice">
+                <option value="Мясо1">Колбаса вареная Вязанка филейская Стародвор колбасы п/а, 450 г</option>
+                <option value="Мясо2">Сосиски Мираторг венские Мираторг в/у, 350 г</option>
+                <option value="Мясо3">Колбаса вареная в синюге Мираторг докторская Мираторг , 450 г</option>
+                <option value="Мясо4">Ветчина вареная Знаменский по швейцарскому рецепту Знаменский
+                    ООО в/у, 300 г</option>
+                <option value="Мясо5">Сосиски вареные Дымов докторские Дымовское КП защ атм, 464 г</option>
+                <option value="Мясо6">Колбаса вареная Черкизово классическая ООО Пит-Продукт нарезка м/у, 200 г</option>
+                <option value="Мясо7">Сосиски н/о Дымов баварские Дымовское КП в/у, 460 г</option>
+            </select>
+            <label>Количество товара:</label>
+            <input id="amount" type="text" name="amount" placeholder="Введите количество товара">
+            <button onclick="calculatePrice()">Рассчитать стоимость</button>
+            <div id="result" name="result">ИТОГО: </div>
+        </div>
+      </div>
+    </div>
+    <script src="calculator.js"></script>
+  </body>
+</html>
