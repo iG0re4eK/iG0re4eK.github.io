@@ -28,7 +28,7 @@ function getProductPrice(productName) {
     case "Мясо4":
       return 249.0;
     case "Мясо5":
-      return 159.0;
+      return 169.0;
     case "Мясо6":
       return 145.0;
     case "Мясо7":
