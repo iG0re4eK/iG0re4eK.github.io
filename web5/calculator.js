@@ -3,12 +3,13 @@ function calculatePrice(event) {
   let selectedProduct = document.getElementById("selection").value;
   let amount = document.getElementById("amount").value;
 
-  let isDecimal = /^-?\d+\.\d+$/.test(amount);
+  let isDecimal = /^\d+\.\d+$/.test(amount);
   let isZero = amount.trim()[0] == "0" ? 1 : 0;
   let isNegative = parseFloat(amount) < 0 ? 1 : 0;
   let isString = isNaN(amount) ? 1 : 0;
+  let isSpace = amount.trim() == "" ? 1 : 0;
 
-  if (isNegative || isString || isZero || isDecimal) {
+  if (isNegative || isString || isZero || isDecimal || isSpace) {
     document.getElementById("result").textContent =
       "Введите корректное количество товара.";
   } else {
