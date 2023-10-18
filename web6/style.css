@@ -2,8 +2,6 @@
   margin: 0;
 }
 .flex-box {
-  margin-top: 10vh;
-  margin-bottom: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,10 +16,10 @@
   background-color: chocolate;
 }
 .flex-box-content {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 .pay-product {
   display: flex;
