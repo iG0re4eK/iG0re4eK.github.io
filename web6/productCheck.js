@@ -47,21 +47,22 @@ function updatePrice() {
       }
     }
   });
-
+  document.getElementById("prodPrice").innerHTML =
+    "Введите корректное количество товара.";
   let amount = document.getElementById("amount").value;
-  if (amount != undefined) {
+  if (amount != null) {
     let isDecimal = /^-?\d+\.\d+$/.test(amount);
     let isZero = amount.trim()[0] == "0" ? 1 : 0;
     let isNegative = parseFloat(amount) < 0 ? 1 : 0;
     let isString = isNaN(amount) ? 1 : 0;
-    if (isNegative || isString || isZero || isDecimal) {
-      document.getElementById("prodPrice").innerHTML =
-        "Введите корректное количество товара.";
+    let isSpace = amount.trim() == "" ? 1 : 0;
+
+    if (isNegative || isString || isZero || isDecimal || isSpace) {
     } else {
       let parsedAmount = parseFloat(amount);
       price *= parsedAmount;
       let prodPrice = document.getElementById("prodPrice");
-      prodPrice.innerHTML = price + " рублей";
+      prodPrice.innerHTML = "Итого: " + price + " рублей";
     }
   }
 }
@@ -90,6 +91,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
   // Находим select по имени в DOM.
   let s = document.getElementsByName("prodType");
   let select = s[0];
+  let i = this.document.getElementByName;
 
   // Назначаем обработчик на изменение select.
   select.addEventListener("change", function (event) {
@@ -123,6 +125,5 @@ window.addEventListener("DOMContentLoaded", function (event) {
   input.addEventListener("input", () => {
     updatePrice();
   });
-
   updatePrice();
 });
