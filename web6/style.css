@@ -2,17 +2,26 @@
   margin: 0;
 }
 .flex-box {
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 70%;
 }
 .price-content {
+  padding-top: 2%;
+  padding-bottom: 2%;
   background-color: beige;
+  min-width: 50vw;
+  max-width: 50vw;
 }
 .product-text {
   background-color: aquamarine;
+}
+.price-more-text {
+  background-color: cadetblue;
 }
 .price-text {
   background-color: chocolate;
@@ -30,4 +39,6 @@
 }
 .price-table {
   background-color: rgb(210, 140, 195);
+  display: flex;
+  justify-content: space-around;
 }
