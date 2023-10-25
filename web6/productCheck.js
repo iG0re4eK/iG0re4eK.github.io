@@ -71,6 +71,7 @@ function getPrices() {
   return {
     prodTypes: [59, 454, 154],
     prodOptions: {
+      option1: 0,
       option2: 10,
       option3: 20,
     },
