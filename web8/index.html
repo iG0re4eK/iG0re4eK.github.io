@@ -5,6 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <title>Задание 8</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   </head>
-  <body></body>
+  <body>
+    <button data-modal-target="#modal" id="showForm">Открыть форму</button>
+
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">Форма обратной связи</div>
+        <button data-close-button class="close-button">Назад</button>
+      </div>
+      <form
+        class="modal-body formcarryForm"
+        id="myForm"
+        action="https://formcarry.com/s/7hcQamA0Or"
+        enctype="multipart/form-data"
+      >
+        <label for="name">ФИО:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          autocomplete="off"
+          value="jack"
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="off"
+          value="jack@gmail.com"
+        />
+
+        <label for="phone">Телефон:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          autocomplete="off"
+          value="86841946316"
+        />
+
+        <label for="organization">Организация:</label>
+        <input
+          type="text"
+          id="organization"
+          name="organization"
+          autocomplete="off"
+          value="jackOOO corpartion"
+        />
+
+        <label for="message">Сообщение:</label>
+        <textarea
+          id="message"
+          class="text-area"
+          name="message"
+          required
+          autocomplete="off"
+        ></textarea>
+        <div class="">
+          <label for="agree"
+            >Согласие с политикой обработки персональных данных:</label
+          >
+          <input type="checkbox" id="agree" name="agree" required checked />
+        </div>
+
+        <button type="submit" id="submitForm">Отправить</button>
+      </form>
+    </div>
+    <div id="messageBox" class="messageBox">...</div>
+    <div id="overlay"></div>
+    <script src="script.js"></script>
+
+    <script>
+      const messageBox = document.getElementById("messageBox");
+      $(function () {
+        $(".formcarryForm").submit(function (e) {
+          e.preventDefault();
+          var href = "https://formcarry.com/s/7hcQamA0Or";
+
+          $.ajax({
+            type: "POST",
+            url: href,
+            data: $(this).serialize(),
+            dataType: "json",
+            success: function (response) {
+              if (response.status == "success") {
+                messageBox.innerHTML = "Мы получили вашу заявку, спасибо";
+              } else if (response.code === 422) {
+                messageBox.innerHTML = "Проверка поля не удалась";
+                $.each(response.errors, function (key) {
+                  $('[name="' + key + '"]').addClass("formcarry-field-error");
+                });
+              } else {
+                alert("An error occured: " + response.message);
+              }
+            },
+            error: function (jqXHR, textStatus) {
+              const errorObject = jqXHR.responseJSON;
+
+              alert(
+                "Request failed, " +
+                  errorObject.title +
+                  ": " +
+                  errorObject.message
+              );
+            },
+            complete: function () {
+              // This will be fired after request is complete whether it's successful or not.
+              // Use this block to run some code after request is complete.
+            },
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
