@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <title>Задание 8</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
     <button data-modal-target="#modal" id="showForm">Открыть форму</button>
@@ -73,12 +73,13 @@
       //messageBox.innerHTML = "Мы получили вашу заявку, спасибо";
       //messageBox.innerHTML = "Проверка поля не удалась";
       //https://formcarry.com/s/7hcQamA0Or
+
       $(function () {
         $(".formcarryForm").submit(function (e) {
           e.preventDefault();
           // REQUIRED FOR RESET
           var form = $(this);
-          var href = "https://formcarry.com/s/7hcQamA0Or";
+          var href = form.attr("action");
 
           $.ajax({
             type: "POST",
@@ -89,14 +90,14 @@
             contentType: false,
             success: function (response) {
               if (response.code === 200) {
-                messageBox.innerHTML = "Мы получили вашу заявку, спасибо";
+                alert("We received your submission, thank you!");
 
                 // REQUIRED FOR RESET
                 // Reset your form fields after a successful submission
                 // If you want to reset fields whether request is successful or not, move this piece of code into complete function
                 form[0].reset();
               } else {
-                messageBox.innerHTML = "Проверка поля не удалась";
+                alert("An error occured: " + response.message);
               }
             },
             error: function (err, textStatus) {
