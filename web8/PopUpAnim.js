@@ -28,13 +28,14 @@ function openModal(modal) {
   if (modal == null) return;
   modal.classList.add("active");
   overlay.classList.add("active");
-  history.pushState(40, null, "popup.html");
+  history.pushState(null, null, "popup.html");
 }
 
 function closeModal(modal) {
   if (modal == null) return;
   modal.classList.remove("active");
   overlay.classList.remove("active");
+
   history.back();
 }
 

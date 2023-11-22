@@ -22,14 +22,7 @@
         enctype="multipart/form-data"
       >
         <label for="name">ФИО:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          autocomplete="off"
-          value="jack"
-        />
+        <input type="text" id="name" name="name" required autocomplete="off" />
 
         <label for="email">Email:</label>
         <input
@@ -38,17 +31,10 @@
           name="email"
           required
           autocomplete="off"
-          value="jack@gmail.com"
         />
 
         <label for="phone">Телефон:</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          autocomplete="off"
-          value="86841946316"
-        />
+        <input type="tel" id="phone" name="phone" autocomplete="off" />
 
         <label for="organization">Организация:</label>
         <input
@@ -56,7 +42,6 @@
           id="organization"
           name="organization"
           autocomplete="off"
-          value="jackOOO corpartion"
         />
 
         <label for="message">Сообщение:</label>
@@ -71,7 +56,7 @@
           <label for="agree"
             >Согласие с политикой обработки персональных данных:</label
           >
-          <input type="checkbox" id="agree" name="agree" required checked />
+          <input type="checkbox" id="agree" name="agree" required />
         </div>
 
         <button type="submit" id="submitForm">Отправить</button>
@@ -79,34 +64,49 @@
     </div>
     <div id="messageBox" class="messageBox">...</div>
     <div id="overlay"></div>
-    <script src="script.js"></script>
+    <script src="PopUpAnim.js"></script>
+    <script src="LocalStorage.js"></script>
 
     <script>
       const messageBox = document.getElementById("messageBox");
+
+      //messageBox.innerHTML = "Мы получили вашу заявку, спасибо";
+      //messageBox.innerHTML = "Проверка поля не удалась";
+      //https://formcarry.com/s/7hcQamA0Or
       $(function () {
         $(".formcarryForm").submit(function (e) {
           e.preventDefault();
+          // REQUIRED FOR RESET
+          var form = $(this);
           var href = "https://formcarry.com/s/7hcQamA0Or";
 
           $.ajax({
             type: "POST",
             url: href,
-            data: $(this).serialize(),
+            data: new FormData(this),
             dataType: "json",
+            processData: false,
+            contentType: false,
             success: function (response) {
-              if (response.status == "success") {
+              if (response.code === 200) {
                 messageBox.innerHTML = "Мы получили вашу заявку, спасибо";
-              } else if (response.code === 422) {
-                messageBox.innerHTML = "Проверка поля не удалась";
-                $.each(response.errors, function (key) {
-                  $('[name="' + key + '"]').addClass("formcarry-field-error");
-                });
+
+                // REQUIRED FOR RESET
+                // Reset your form fields after a successful submission
+                // If you want to reset fields whether request is successful or not, move this piece of code into complete function
+                form[0].reset();
               } else {
-                alert("An error occured: " + response.message);
+                messageBox.innerHTML = "Проверка поля не удалась";
               }
             },
-            error: function (jqXHR, textStatus) {
-              const errorObject = jqXHR.responseJSON;
+            error: function (err, textStatus) {
+              const error = err.responseJSON;
+
+              // validation error
+              $.each(error.errors, function (key) {
+                var field = $('[name="' + key + '"]');
+                field.addClass("fc-field-error");
+              });
 
               alert(
                 "Request failed, " +
@@ -115,10 +115,7 @@
                   errorObject.message
               );
             },
-            complete: function () {
-              // This will be fired after request is complete whether it's successful or not.
-              // Use this block to run some code after request is complete.
-            },
+            complete: function () {},
           });
         });
       });
